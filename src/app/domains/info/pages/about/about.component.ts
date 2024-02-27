@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { CounterComponent } from "../../../shared/components/counter/counter.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-about',
     standalone: true,
     templateUrl: './about.component.html',
     styleUrl: './about.component.css',
-    imports: [CounterComponent]
+    imports: [CounterComponent, CommonModule]
 })
 export class AboutComponent {
   duration = signal(1000);

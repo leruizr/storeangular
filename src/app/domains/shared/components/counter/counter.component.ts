@@ -23,6 +23,39 @@ export class CounterComponent {
     console.log('ngOnChanges');
     console.log('-'.repeat(10));
     console.log(changes);
+    const duration = changes['duration'];
+    if (duration && duration.currentValue !== duration.previousValue) {
+      this.doSomething();
+    }
   }
+
+  ngOnInit() {
+    // After render
+    // Only once 
+    console.log('ngOnInit');
+    console.log('-'.repeat(10));
+    console.log('duration =>', this.duration);
+    console.log('message =>', this.message);
+  }
+
+  ngAfterViewInit() {
+    // After render
+    // Only once 
+    // Child components are initialized
+    console.log('ngAfterViewInit');
+    console.log('-'.repeat(10));
+  }
+
+  ngOnDestroy() {
+    // Before destroy
+    console.log('ngOnDestroy');
+    console.log('-'.repeat(10));
+  }
+
+  doSomething() {
+    console.log('change duration')
+  }
+
+
 
 }
